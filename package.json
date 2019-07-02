@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "react": "16.8.3",
