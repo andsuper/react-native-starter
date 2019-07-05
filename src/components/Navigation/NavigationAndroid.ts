@@ -1,11 +1,11 @@
 import { createDrawerNavigator } from 'react-navigation'
 
 import HomeScreen from '../../screens/Home'
+import SettingsScreen from '../../screens/Settings'
 
-const NavigationAndroid = createDrawerNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-})
+const RouteConfiguration = {
+  Home: HomeScreen,
+  Settings: SettingsScreen,
+}
 
-export default NavigationAndroid
+export default createDrawerNavigator(RouteConfiguration)

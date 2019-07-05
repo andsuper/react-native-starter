@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform, Text, View } from 'react-native'
 
-import styles from './Home.style'
+import styles from './Home.styles'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
