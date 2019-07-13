@@ -9,6 +9,10 @@ export default createBottomTabNavigator(
   {
     Home: {
       screen: HomeScreen,
+      navigationOptions: {
+        tabBarLabel: 'asd12',
+        // tabBarIcon:
+      },
     },
     Settings: {
       screen: SettingsScreen,
