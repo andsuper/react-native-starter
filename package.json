@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native start",
     "run:ios": "react-native run-ios",
     "run:android": "react-native run-android",
     "test": "jest",
@@ -13,18 +13,18 @@
   "dependencies": {
     "mobx": "^5.10.1",
     "mobx-react": "^6.1.1",
-    "react": "16.8.3",
-    "react-native": "0.59.9",
+    "react": "16.8.6",
+    "react-native": "0.60.3",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-screens": "^1.0.0-alpha.22",
     "react-native-vector-icons": "^6.6.0",
-    "react-navigation": "^3.11.0"
+    "react-navigation": "^3.11.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/runtime": "^7.4.5",
+    "@babel/core": "^7.5.4",
+    "@babel/runtime": "^7.5.4",
     "@types/jest": "^24.0.15",
-    "@types/react": "^16.8.22",
+    "@types/react": "^16.8.23",
     "@types/react-native": "^0.57.65",
     "@types/react-native-vector-icons": "^6.4.1",
     "@types/react-test-renderer": "^16.8.2",
@@ -32,14 +32,14 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.54.1",
+    "metro-react-native-babel-preset": "^0.55.0",
     "prettier": "^1.18.2",
-    "react-test-renderer": "16.8.3",
+    "react-test-renderer": "16.8.6",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "husky": {
     "hooks": {

@@ -10,7 +10,7 @@ export default createBottomTabNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        tabBarLabel: 'asd12',
+        tabBarLabel: 'Home',
         // tabBarIcon:
       },
     },
