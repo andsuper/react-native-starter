@@ -1,0 +1,10 @@
+{
+  "home": {
+    "tabLabel": "Home",
+    "welcome": "Welcome to React Native!"
+  },
+  "settings": {
+    "tabLabel": "Settings",
+    "headline": "Settings"
+  }
+}
