@@ -1,12 +1,15 @@
 import { NativeModules, Platform } from 'react-native'
 
 /**
- * Returns the device language code.
+ * Returns the device ISO 639-1 language code.
  *
  * @returns {string} language code
  */
 export default (): string => {
-  return Platform.OS === 'ios'
-    ? NativeModules.SettingsManager.settings.AppleLocale.substring(0, 2)
-    : NativeModules.I18nManager.localeIdentifier.substring(0, 2)
+  const languageCode: string =
+    Platform.OS === 'ios'
+      ? NativeModules.SettingsManager.settings.AppleLocale
+      : NativeModules.I18nManager.localeIdentifier
+
+  return languageCode.substring(0, 2)
 }
