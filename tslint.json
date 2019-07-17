@@ -13,7 +13,6 @@
     "member-ordering": false,
     "jsx-no-lambda": false,
     "jsx-no-boolean-value": false,
-    "interface-name": [true, "never-prefix"],
     "member-access": [true, "no-public"]
   },
   "rulesDirectory": []
