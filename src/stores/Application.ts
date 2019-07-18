@@ -68,4 +68,4 @@ class ApplicationStore implements IApplicationStore {
 }
 
 export default ApplicationStore
-export { IApplicationStore }
+export { IApplicationStore, Theme }

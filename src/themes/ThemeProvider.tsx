@@ -18,3 +18,4 @@ const ThemeProvider: React.FC<IProps> = ({ children, store }) => {
 }
 
 export default inject('store')(observer(ThemeProvider))
+export { ThemeContext }

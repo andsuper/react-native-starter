@@ -1,12 +1,14 @@
 [
   {
     "key": "light",
-    "backgroundColor": "#011627",
-    "color": "#ffffff"
+    "color": "#222A37",
+    "background": "#E2E8F0",
+    "tabBarBackground": "#FFF"
   },
   {
     "key": "dark",
-    "backgroundColor": "#2EC4B6",
-    "color": "#ffffff"
+    "color": "#fff",
+    "background": "#2C3849",
+    "tabBarBackground": "#4A5569"
   }
 ]
