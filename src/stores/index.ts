@@ -1,14 +1,14 @@
 import ApplicationStore, { IApplicationStore } from './Application'
 
 interface IRootStore {
-  applicationStore: IApplicationStore
+  application: IApplicationStore
 }
 
 class RootStore implements IRootStore {
-  applicationStore: IApplicationStore
+  application: IApplicationStore
 
   constructor() {
-    this.applicationStore = new ApplicationStore(this)
+    this.application = new ApplicationStore()
   }
 }
 
