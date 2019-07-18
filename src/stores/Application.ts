@@ -2,17 +2,18 @@ import { action, observable, reaction } from 'mobx'
 
 import i18n from '../i18n'
 import { getDeviceLanguage } from '../utils'
-import { IRootStore } from './index'
 
 enum Theme {
-  Light = 'light',
   Dark = 'dark',
+  Light = 'light',
 }
 
 interface IApplicationStore {
-  isHydrating: boolean
   theme: Theme
   language: string
+  isHydrating: boolean
+  setLanguage: (language: string) => void
+  setTheme: (theme: Theme) => void
 }
 
 class ApplicationStore implements IApplicationStore {
@@ -20,18 +21,13 @@ class ApplicationStore implements IApplicationStore {
   @observable theme = Theme.Light
   @observable language = 'en'
 
-  rootStore: IRootStore
-
-  constructor(rootStore: IRootStore) {
-    this.rootStore = rootStore
-
-    this.hydrateStore()
-
-    reaction(() => this.language, language => i18n.setLanguage(language))
+  constructor() {
+    this.hydrate()
+    this.setupReactions()
   }
 
   /**
-   * Sets the app language.
+   * Action to set the app language.
    *
    * @param {string} language
    * @returns {void}
@@ -40,9 +36,34 @@ class ApplicationStore implements IApplicationStore {
     this.language = language
   }
 
-  private hydrateStore(): void {
-    // console.log('ApplicationStore --> hydrate')
+  /**
+   * Action to set the app theme.
+   *
+   * @param {Theme} theme
+   * @returns {void}
+   */
+  @action setTheme(theme: Theme): void {
+    this.theme = theme
+  }
+
+  /**
+   * ...
+   *
+   * @private
+   * @returns {void}
+   */
+  private hydrate(): void {
     this.setLanguage(getDeviceLanguage())
+  }
+
+  /**
+   * ...
+   *
+   * @private
+   * @returns {void}
+   */
+  private setupReactions(): void {
+    reaction(() => this.language, language => i18n.setLanguage(language))
   }
 }
 
