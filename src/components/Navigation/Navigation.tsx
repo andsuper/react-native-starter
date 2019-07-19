@@ -1,9 +1,9 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/Feather'
-import { observer, inject } from 'mobx-react'
 import { createBottomTabNavigator } from 'react-navigation'
 
 import i18n from '../../i18n'
+import ThemedTabBar from '../ThemedTabBar'
 import HomeScreen from '../../screens/Home'
 import SettingsScreen from '../../screens/Settings'
 
@@ -30,12 +30,8 @@ const Navigation = createBottomTabNavigator(
   },
   {
     initialRouteName: 'Home',
-    tabBarOptions: {
-      style: {
-        // backgroundColor:
-      },
-    },
+    tabBarComponent: ThemedTabBar,
   },
 )
 
-export default inject('store')(observer(Navigation))
+export default Navigation

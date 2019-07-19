@@ -8,7 +8,7 @@ interface IProps {
   theme: string
 }
 
-const ThemeContext = React.createContext({})
+const ThemeContext = React.createContext<Partial<any>>({})
 
 const ThemeProvider: React.FC<IProps> = ({ children, theme }) => {
   const themeConfiguration = themes.filter(item => item.key === theme)[0]

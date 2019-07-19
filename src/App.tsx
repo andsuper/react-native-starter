@@ -6,13 +6,15 @@ import Navigator from './components/Navigation'
 import RootStore from './stores'
 import { ThemeProvider } from './themes'
 
+const store = new RootStore()
+
 const App = () => {
+  const { theme } = store.application
+
   return (
-    <Provider store={RootStore}>
-      <ThemeProvider theme={RootStore.application.theme}>
-        <StatusBar
-          barStyle={RootStore.application.theme === 'light' ? 'dark-content' : 'light-content'}
-        />
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <StatusBar barStyle={theme === 'light' ? 'dark-content' : 'light-content'} />
         <Navigator />
       </ThemeProvider>
     </Provider>
