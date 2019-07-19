@@ -9,8 +9,10 @@ const ThemedTabBar: React.FC<any> = props => {
   return (
     <BottomTabBar
       {...props}
+      activeTintColor={theme.tabBar.active}
+      inactiveTintColor={theme.tabBar.inactive}
       style={{
-        backgroundColor: theme.tabBarBackground,
+        backgroundColor: theme.tabBar.background,
       }}
     />
   )
