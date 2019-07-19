@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { inject, observer } from 'mobx-react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, Switch } from 'react-native'
 
 import i18n from '../../i18n'
 import styles from './Settings.styles'
@@ -19,13 +19,17 @@ const SettingsScreen: React.FC<IProps> = inject('store')(
 
     return (
       <View style={[styles.container, { backgroundColor: theme.background }]}>
-        <Text style={[styles.text, { color: theme.color }]}>
-          {i18n.formatString(i18n.settings.headline)}
+        <Text style={[styles.title, { color: theme.color }]}>
+          {i18n.formatString(i18n.settings.title)}
         </Text>
-        <Button
-          title="Change to dark theme"
-          onPress={() => store.application.setTheme(Theme.Dark)}
-        />
+
+        <View style={styles.item}>
+          <Text style={styles.itemText}> {i18n.formatString(i18n.settings.darkModeLabel)}</Text>
+          <Switch
+            value={store.application.theme === 'dark' ? true : false}
+            onValueChange={value => store.application.setTheme(value ? Theme.Dark : Theme.Light)}
+          />
+        </View>
       </View>
     )
   }),

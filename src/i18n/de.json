@@ -5,6 +5,7 @@
   },
   "settings": {
     "tabLabel": "Einstellungen",
-    "headline": "Einstellungen"
+    "title": "Einstellungen",
+    "darkModeLabel": "Dunkles Erscheinungsbild"
   }
 }
