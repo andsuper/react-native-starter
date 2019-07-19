@@ -2,9 +2,9 @@ import React from 'react'
 import { StatusBar } from 'react-native'
 import { Provider, observer } from 'mobx-react'
 
-import { ThemeProvider } from './themes'
 import Navigator from './components/Navigation'
 import RootStore from './stores'
+import { ThemeProvider } from './themes'
 
 const App = () => {
   return (
