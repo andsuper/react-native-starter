@@ -1,21 +1,20 @@
 import React from 'react'
-import { observer, inject } from 'mobx-react'
+import { inject } from 'mobx-react'
 
 import themes from './themes.json'
-import { IRootStore } from '../stores/index.js'
 
 interface IProps {
   children: any
-  store: IRootStore
+  theme: string
 }
 
 const ThemeContext = React.createContext({})
 
-const ThemeProvider: React.FC<IProps> = ({ children, store }) => {
-  const theme = themes.filter(item => item.key === store.application.theme)[0]
+const ThemeProvider: React.FC<IProps> = ({ children, theme }) => {
+  const themeConfiguration = themes.filter(item => item.key === theme)[0]
 
-  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+  return <ThemeContext.Provider value={themeConfiguration}>{children}</ThemeContext.Provider>
 }
 
-export default inject('store')(observer(ThemeProvider))
+export default inject('store')(ThemeProvider)
 export { ThemeContext }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Provider } from 'mobx-react'
+import { StatusBar } from 'react-native'
+import { Provider, observer } from 'mobx-react'
 
 import { ThemeProvider } from './themes'
 import Navigator from './components/Navigation'
@@ -8,11 +9,14 @@ import RootStore from './stores'
 const App = () => {
   return (
     <Provider store={RootStore}>
-      <ThemeProvider>
+      <ThemeProvider theme={RootStore.application.theme}>
+        <StatusBar
+          barStyle={RootStore.application.theme === 'light' ? 'dark-content' : 'light-content'}
+        />
         <Navigator />
       </ThemeProvider>
     </Provider>
   )
 }
 
-export default App
+export default observer(App)
