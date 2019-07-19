@@ -1,0 +1,24 @@
+[
+  {
+    "key": "light",
+    "accent": "#FC5C48",
+    "color": "#030303",
+    "background": "#F1F3F4",
+    "tabBar": {
+      "active": "#FC5C48",
+      "inactive": "#030303",
+      "background": "#FFF"
+    }
+  },
+  {
+    "key": "dark",
+    "accent": "#FC5C48",
+    "color": "#fff",
+    "background": "#111111",
+    "tabBar": {
+      "active": "#FC5C48",
+      "inactive": "#555255",
+      "background": "#181819"
+    }
+  }
+]

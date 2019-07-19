@@ -12,5 +12,5 @@ class RootStore implements IRootStore {
   }
 }
 
-export default new RootStore()
+export default RootStore
 export { IRootStore }

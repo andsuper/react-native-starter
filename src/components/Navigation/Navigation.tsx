@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/Feather'
 import { createBottomTabNavigator } from 'react-navigation'
 
 import i18n from '../../i18n'
+import ThemedTabBar from '../ThemedTabBar'
 import HomeScreen from '../../screens/Home'
 import SettingsScreen from '../../screens/Settings'
 
@@ -13,7 +14,7 @@ const Navigation = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: i18n.formatString(i18n.home.tabLabel),
         tabBarIcon: ({ tintColor }: { tintColor: string }) => (
-          <Icon name="home" color={tintColor} />
+          <Icon name="home" color={tintColor} size={24} />
         ),
       },
     },
@@ -22,13 +23,17 @@ const Navigation = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: i18n.formatString(i18n.settings.tabLabel),
         tabBarIcon: ({ tintColor }: { tintColor: string }) => (
-          <Icon name="settings" color={tintColor} />
+          <Icon name="settings" color={tintColor} size={24} />
         ),
       },
     },
   },
   {
     initialRouteName: 'Home',
+    tabBarComponent: ThemedTabBar,
+    tabBarOptions: {
+      showLabel: false,
+    },
   },
 )
 
