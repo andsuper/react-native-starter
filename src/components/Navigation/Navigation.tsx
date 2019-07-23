@@ -14,7 +14,7 @@ const Navigation = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: i18n.formatString(i18n.home.tabLabel),
         tabBarIcon: ({ tintColor }: { tintColor: string }) => (
-          <Icon name="home" color={tintColor} />
+          <Icon name="home" color={tintColor} size={24} />
         ),
       },
     },
@@ -23,7 +23,7 @@ const Navigation = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: i18n.formatString(i18n.settings.tabLabel),
         tabBarIcon: ({ tintColor }: { tintColor: string }) => (
-          <Icon name="settings" color={tintColor} />
+          <Icon name="settings" color={tintColor} size={24} />
         ),
       },
     },
@@ -31,6 +31,9 @@ const Navigation = createBottomTabNavigator(
   {
     initialRouteName: 'Home',
     tabBarComponent: ThemedTabBar,
+    tabBarOptions: {
+      showLabel: false,
+    },
   },
 )
 
