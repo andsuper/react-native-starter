@@ -8,6 +8,10 @@
       "active": "#FC5C48",
       "inactive": "#030303",
       "background": "#FFF"
+    },
+    "listItem": {
+      "border": "#D4D4D4",
+      "background": "#FFF"
     }
   },
   {
@@ -19,6 +23,10 @@
       "active": "#FC5C48",
       "inactive": "#555255",
       "background": "#181819"
+    },
+    "listItem": {
+      "border": "#D4D4D4",
+      "background": "#FFF"
     }
   }
 ]

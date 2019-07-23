@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { inject, observer } from 'mobx-react'
-import { View, Text, Button, Switch } from 'react-native'
+import { View, Text, Switch } from 'react-native'
 
 import i18n from '../../i18n'
-import styles from './Settings.styles'
 import { IRootStore } from '../../stores'
 import { Theme } from '../../stores/Application'
 import { ThemeContext } from '../../themes'
+import ListItem from '../../components/ListItem'
+import styles from './Settings.styles'
 
 interface IProps {
   children: React.ReactChildren
@@ -23,13 +24,16 @@ const SettingsScreen: React.FC<IProps> = inject('store')(
           {i18n.formatString(i18n.settings.title)}
         </Text>
 
-        <View style={styles.item}>
-          <Text style={styles.itemText}> {i18n.formatString(i18n.settings.darkModeLabel)}</Text>
-          <Switch
-            value={store.application.theme === 'dark' ? true : false}
-            onValueChange={value => store.application.setTheme(value ? Theme.Dark : Theme.Light)}
-          />
-        </View>
+        {/* Dark mode */}
+        <ListItem
+          label={i18n.formatString(i18n.settings.darkModeLabel)}
+          control={
+            <Switch
+              value={store.application.theme === 'dark' ? true : false}
+              onValueChange={value => store.application.setTheme(value ? Theme.Dark : Theme.Light)}
+            />
+          }
+        />
       </View>
     )
   }),
