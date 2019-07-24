@@ -5,7 +5,7 @@ import { ThemeContext } from '../../themes'
 
 interface IProps {
   children: ReactNode
-  style: any
+  style?: any
 }
 
 const ThemedText: React.FC<IProps> = ({ children, style }) => {

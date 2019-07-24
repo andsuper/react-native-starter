@@ -6,6 +6,7 @@
   "settings": {
     "tabLabel": "Einstellungen",
     "title": "Einstellungen",
-    "darkModeLabel": "Dunkles Erscheinungsbild"
+    "darkModeLabel": "Dunkles Erscheinungsbild",
+    "versionLabel": "Version"
   }
 }

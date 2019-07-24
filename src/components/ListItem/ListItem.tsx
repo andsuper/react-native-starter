@@ -1,15 +1,18 @@
-import React, { ReactElement, useContext } from 'react'
-import { View, Text } from 'react-native'
+import React, { useContext } from 'react'
+import { View } from 'react-native'
 
 import { ThemeContext } from '../../themes'
+import ThemedText from '../ThemedText'
 import styles from './ListItem.styles'
 
 interface IProps {
-  label: string | any
-  control: ReactElement | string
+  label: any
+  right?: any
+  isFirst?: boolean
+  isLast?: boolean
 }
 
-const ListItem: React.FC<IProps> = ({ label, control, ...rest }) => {
+const ListItem: React.FC<IProps> = ({ label, right, isFirst, isLast, ...rest }) => {
   const theme: any = useContext(ThemeContext)
 
   return (
@@ -20,8 +23,8 @@ const ListItem: React.FC<IProps> = ({ label, control, ...rest }) => {
       ]}
       {...rest}
     >
-      <Text style={styles.label}>{label}</Text>
-      {control}
+      <ThemedText style={styles.label}>{label}</ThemedText>
+      {right}
     </View>
   )
 }
