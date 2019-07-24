@@ -1,7 +1,7 @@
 {
   "home": {
     "tabLabel": "Start",
-    "welcome": "Willkommen bei React Native!"
+    "title": "Start"
   },
   "settings": {
     "tabLabel": "Einstellungen",

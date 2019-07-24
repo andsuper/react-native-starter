@@ -7,12 +7,12 @@ import styles from './ListItem.styles'
 
 interface IProps {
   label: any
-  right?: any
+  accessory?: any
   isFirst?: boolean
   isLast?: boolean
 }
 
-const ListItem: React.FC<IProps> = ({ label, right, isFirst, isLast, ...rest }) => {
+const ListItem: React.FC<IProps> = ({ label, accessory, isFirst, isLast, ...rest }) => {
   const theme: any = useContext(ThemeContext)
 
   return (
@@ -25,7 +25,7 @@ const ListItem: React.FC<IProps> = ({ label, right, isFirst, isLast, ...rest }) 
       {...rest}
     >
       <ThemedText style={styles.label}>{label}</ThemedText>
-      {right}
+      {accessory}
     </View>
   )
 }

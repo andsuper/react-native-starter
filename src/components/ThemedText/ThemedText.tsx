@@ -11,7 +11,7 @@ interface IProps {
 const ThemedText: React.FC<IProps> = ({ children, style }) => {
   const theme = useContext(ThemeContext)
 
-  return <Text style={[style, { color: theme.color }]}>{children}</Text>
+  return <Text style={[{ color: theme.text.default }, style]}>{children}</Text>
 }
 
 export default ThemedText

@@ -2,8 +2,11 @@
   {
     "key": "light",
     "accent": "#FC5C48",
-    "color": "#030303",
     "background": "#F1F3F4",
+    "text": {
+      "default": "#030303",
+      "light": "#a0a0a0"
+    },
     "tabBar": {
       "active": "#FC5C48",
       "inactive": "#030303",
@@ -17,8 +20,11 @@
   {
     "key": "dark",
     "accent": "#FC5C48",
-    "color": "#fff",
     "background": "#111111",
+    "text": {
+      "default": "#fff",
+      "light": "#a0a0a0"
+    },
     "tabBar": {
       "active": "#FC5C48",
       "inactive": "#555255",

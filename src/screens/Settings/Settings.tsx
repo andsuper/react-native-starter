@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { inject } from 'mobx-react'
 import { Switch } from 'react-native'
 
 import { version } from '../../../package.json'
+import { ThemeContext } from '../../themes'
 import i18n from '../../i18n'
 import { IRootStore } from '../../stores'
 import { Theme } from '../../stores/Application'
@@ -17,6 +18,8 @@ interface IProps {
 }
 
 const SettingsScreen: React.FC<IProps> = ({ store }) => {
+  const theme = useContext(ThemeContext)
+
   return (
     <Screen>
       <Title>{i18n.formatString(i18n.settings.title)}</Title>
@@ -25,7 +28,7 @@ const SettingsScreen: React.FC<IProps> = ({ store }) => {
         {/* Dark mode */}
         <ListItem
           label={i18n.formatString(i18n.settings.darkModeLabel)}
-          right={
+          accessory={
             <Switch
               value={store.application.theme === 'dark' ? true : false}
               onValueChange={value => store.application.setTheme(value ? Theme.Dark : Theme.Light)}
@@ -36,7 +39,7 @@ const SettingsScreen: React.FC<IProps> = ({ store }) => {
         {/* Version */}
         <ListItem
           label={i18n.formatString(i18n.settings.versionLabel)}
-          right={<ThemedText>{version}</ThemedText>}
+          accessory={<ThemedText style={{ color: theme.text.light }}>{version}</ThemedText>}
         />
       </List>
     </Screen>
