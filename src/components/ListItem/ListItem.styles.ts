@@ -10,8 +10,10 @@ export default StyleSheet.create({
     paddingRight: 16,
     paddingTop: 14,
     paddingBottom: 14,
-    borderTopWidth: 1,
     borderBottomWidth: 1,
+  },
+  first: {
+    borderTopWidth: 1,
   },
   label: {
     fontSize: 16,

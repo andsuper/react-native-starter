@@ -19,6 +19,7 @@ const ListItem: React.FC<IProps> = ({ label, right, isFirst, isLast, ...rest }) 
     <View
       style={[
         styles.container,
+        isFirst && styles.first,
         { backgroundColor: theme.listItem.background, borderColor: theme.listItem.border },
       ]}
       {...rest}
