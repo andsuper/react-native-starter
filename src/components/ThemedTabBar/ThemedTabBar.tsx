@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { BottomTabBar } from 'react-navigation'
+import { BottomTabBar, BottomTabBarProps } from 'react-navigation'
 
 import { ThemeContext } from '../../themes'
 
-const ThemedTabBar: React.FC<any> = props => {
+const ThemedTabBar: React.FC<BottomTabBarProps> = props => {
   const theme = useContext(ThemeContext)
 
   return (

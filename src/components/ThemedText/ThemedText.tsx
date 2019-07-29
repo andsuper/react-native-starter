@@ -1,10 +1,10 @@
-import React, { ReactNode, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Text } from 'react-native'
 
 import { ThemeContext } from '../../themes'
 
 interface IProps {
-  children: ReactNode
+  children: React.ReactNode
   style?: any
 }
 

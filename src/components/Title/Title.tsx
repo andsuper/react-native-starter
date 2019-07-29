@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import ThemedText from '../ThemedText'
 import styles from './Title.styles'
 
 interface IProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const Title: React.FC<IProps> = ({ children }) => {

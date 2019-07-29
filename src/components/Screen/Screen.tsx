@@ -1,11 +1,11 @@
-import React, { ReactNode, useContext } from 'react'
+import React, { useContext } from 'react'
 import { View } from 'react-native'
 
 import { ThemeContext } from '../../themes'
 import styles from './Screen.styles'
 
 interface IProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const Screen: React.FC<IProps> = ({ children }) => {
