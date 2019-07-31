@@ -6,6 +6,7 @@
     "start": "react-native start",
     "run:ios": "react-native run-ios",
     "run:android": "react-native run-android",
+    "pod:install": "cd ios && pod install",
     "test": "jest",
     "lint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx}'"
