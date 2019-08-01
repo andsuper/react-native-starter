@@ -1,7 +1,7 @@
 import { action, observable, reaction } from 'mobx'
 
-import i18n from '../i18n'
 import { getDeviceLanguage } from '../utils'
+import i18n from '../i18n'
 
 enum Theme {
   Dark = 'dark',

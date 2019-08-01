@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { ActivityIndicator, StatusBar, View } from 'react-native'
 import { Provider, observer } from 'mobx-react'
 
-import Navigator from './components/Navigation'
-import RootStore from './stores'
 import { ThemeProvider } from './themes'
 import { database } from './utils'
+import Navigator from './components/Navigation'
+import RootStore from './stores'
 
 const store = new RootStore()
 
