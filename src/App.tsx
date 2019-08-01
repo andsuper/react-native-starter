@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ActivityIndicator, StatusBar, Text, View } from 'react-native'
+import { ActivityIndicator, StatusBar, View } from 'react-native'
 import { Provider, observer } from 'mobx-react'
 
 import Navigator from './components/Navigation'
@@ -10,14 +10,14 @@ import { database } from './utils'
 const store = new RootStore()
 
 const App = () => {
-  const [isInitializing, setIsInitializing] = useState(true)
   const { theme } = store.application
+  const [isInitializing, setIsInitializing] = useState(true)
 
   useEffect(() => {
     database
       .open()
-      .then(() => setIsInitializing(false))
-      .catch(() => setIsInitializing(false))
+      .catch() // @TODO: Log error with logging system
+      .finally(() => setIsInitializing(false))
   }, [])
 
   return (
@@ -25,12 +25,12 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <StatusBar barStyle={theme === 'light' ? 'dark-content' : 'light-content'} />
 
-        {isInitializing ? (
+        {!isInitializing ? (
+          <Navigator />
+        ) : (
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <ActivityIndicator animating={isInitializing} />
           </View>
-        ) : (
-          <Navigator />
         )}
       </ThemeProvider>
     </Provider>

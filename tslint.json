@@ -13,7 +13,8 @@
     "member-ordering": false,
     "jsx-no-lambda": false,
     "jsx-no-boolean-value": false,
-    "member-access": [true, "no-public"]
+    "member-access": [true, "no-public"],
+    "no-floating-promises": false
   },
   "rulesDirectory": []
 }

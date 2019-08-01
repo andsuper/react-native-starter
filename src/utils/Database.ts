@@ -15,9 +15,6 @@ class Database implements IDatabase {
     return SQLite.openDatabase({
       name: this.databaseName,
       location: 'default',
-    }).then(db => {
-      this.database = db
-      return db
     })
   }
 }
