@@ -1,6 +1,6 @@
 import { action, observable, reaction } from 'mobx'
 
-import { getDeviceLanguage } from '../utils'
+import { getDeviceLanguage, database } from '../utils'
 import i18n from '../i18n'
 
 enum Theme {
@@ -53,7 +53,20 @@ class ApplicationStore implements IApplicationStore {
    * @returns {void}
    */
   private hydrate(): void {
+    this.isHydrating = true
+
     this.setLanguage(getDeviceLanguage())
+
+    database
+      .open()
+      .then(() =>
+        database.getConfiguration('theme').then(theme => {
+          if (theme) {
+            this.setTheme(theme)
+          }
+        }),
+      )
+      .finally(() => (this.isHydrating = false))
   }
 
   /**
@@ -64,6 +77,10 @@ class ApplicationStore implements IApplicationStore {
    */
   private setupReactions(): void {
     reaction(() => this.language, language => i18n.setLanguage(language))
+    reaction(
+      () => this.theme,
+      theme => database.updateConfiguration({ key: 'theme', value: theme }),
+    )
   }
 }
 
