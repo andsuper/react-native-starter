@@ -16,8 +16,12 @@ class Database implements IDatabase {
   private databaseName = `${getDatabaseName()}.db`
   private database: SQLite.SQLiteDatabase | undefined
 
+  /**
+   * Opens the database connection.
+   *
+   * @returns {Promise<SQLiteDatabase>}
+   */
   open(): Promise<SQLite.SQLiteDatabase> {
-    SQLite.DEBUG(true)
     SQLite.enablePromise(true)
 
     let databaseInstance: SQLite.SQLiteDatabase
@@ -37,6 +41,12 @@ class Database implements IDatabase {
       })
   }
 
+  /**
+   * Loads a single configuration by the given key.
+   *
+   * @param {string} key
+   * @returns {Promise<any>}
+   */
   getConfiguration(key: string): Promise<any> {
     return this.getDatabase()
       .then(db => db.executeSql(`SELECT value FROM configurations WHERE key = ?;`, [key]))
@@ -51,6 +61,12 @@ class Database implements IDatabase {
       })
   }
 
+  /**
+   * Creates or updates the given configuration.
+   *
+   * @param {IConfiguration} configuration
+   * @returns {Promise<void>}
+   */
   updateConfiguration(configuration: IConfiguration): Promise<void> {
     return this.getDatabase()
       .then(db =>
@@ -70,6 +86,12 @@ class Database implements IDatabase {
       })
   }
 
+  /**
+   * Returns the database instance.
+   *
+   * @private
+   * @returns {Promise<SQLiteDatabase>}
+   */
   private getDatabase(): Promise<SQLite.SQLiteDatabase> {
     if (this.database !== undefined) {
       return Promise.resolve(this.database)
@@ -78,13 +100,27 @@ class Database implements IDatabase {
     return this.open()
   }
 
+  /**
+   * Updates the database tables.
+   *
+   * @private
+   * @param {SQLiteDatabase} database
+   * @returns {Promise<void>}
+   */
   private updateDatabaseTables(database: SQLite.SQLiteDatabase): Promise<void> {
     return database.transaction(this.createTables).then(() => {
       return
     })
   }
 
-  private createTables(transaction: SQLite.Transaction) {
+  /**
+   * Initializes the database tables.
+   *
+   * @private
+   * @param {Transaction} transaction
+   * @returns {void}
+   */
+  private createTables(transaction: SQLite.Transaction): void {
     // Settings table
     transaction.executeSql(`
       CREATE TABLE IF NOT EXISTS configurations (
