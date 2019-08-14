@@ -8,7 +8,7 @@ A short description about your project.
 
 1. Clone the repository: `git clone git@your-repository-url.git`.
 1. Navigate into the project folder: `cd your-repository-name`.
-1. Remove the git folder: `rm -Rf .git`.
+1. Remove the git folder: `rm -rf .git`.
 1. Create a empty repository: `git init`.
 1. Install the dependencies: `yarn install`.
 
