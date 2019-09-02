@@ -1,0 +1,18 @@
+{
+  "key": "dark",
+  "accent": "#FC5C48",
+  "background": "#111111",
+  "text": {
+    "default": "#fff",
+    "light": "#a0a0a0"
+  },
+  "tabBar": {
+    "active": "#FC5C48",
+    "inactive": "#555255",
+    "background": "#181819"
+  },
+  "listItem": {
+    "border": "#111111",
+    "background": "#181819"
+  }
+}

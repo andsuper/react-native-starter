@@ -3,13 +3,13 @@ import { inject } from 'mobx-react'
 import { Switch } from 'react-native'
 
 import { version } from '../../../package.json'
-import { ThemeContext } from '../../themes'
+import { ThemeContext } from '../../utils'
 import { IRootStore } from '../../stores'
 import { Theme } from '../../stores/Application'
 import i18n from '../../i18n'
 import List from '../../components/List/List'
 import ListItem from '../../components/ListItem'
-import Screen from '../../components/Screen'
+import Layout from '../../components/Layout'
 import Title from '../../components/Title'
 import ThemedText from '../../components/ThemedText'
 
@@ -21,7 +21,7 @@ const SettingsScreen: React.FC<IProps> = ({ store }) => {
   const theme = useContext(ThemeContext)
 
   return (
-    <Screen>
+    <Layout>
       <Title>{i18n.formatString(i18n.settings.title)}</Title>
 
       <List>
@@ -42,7 +42,7 @@ const SettingsScreen: React.FC<IProps> = ({ store }) => {
           accessory={<ThemedText style={{ color: theme.text.light }}>{version}</ThemedText>}
         />
       </List>
-    </Screen>
+    </Layout>
   )
 }
 

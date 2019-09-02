@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Text } from 'react-native'
 
-import { ThemeContext } from '../../themes'
+import { ThemeContext } from '../../utils'
 
 interface IProps {
   children: React.ReactNode

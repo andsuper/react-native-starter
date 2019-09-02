@@ -1,7 +1,7 @@
 import React from 'react'
 import { inject } from 'mobx-react'
 
-import themes from './themes.json'
+import themes from '../themes'
 
 interface IProps {
   children: any
