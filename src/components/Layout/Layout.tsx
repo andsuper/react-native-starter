@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { SafeAreaView, View } from 'react-native'
 
-import { ThemeContext } from '../../themes'
-import styles from './Screen.styles'
+import { ThemeContext } from '../../utils'
+import styles from './Layout.styles'
 
 interface IProps {
   children: React.ReactNode

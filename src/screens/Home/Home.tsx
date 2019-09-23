@@ -1,14 +1,14 @@
 import React from 'react'
 
 import i18n from '../../i18n'
-import Screen from '../../components/Screen'
+import Layout from '../../components/Layout'
 import Title from '../../components/Title'
 
 const HomeScreen: React.FC<{}> = () => {
   return (
-    <Screen>
+    <Layout>
       <Title>{i18n.formatString(i18n.home.title)}</Title>
-    </Screen>
+    </Layout>
   )
 }
 

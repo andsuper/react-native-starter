@@ -2,7 +2,7 @@ import React from 'react'
 import { ActivityIndicator, StatusBar, View } from 'react-native'
 import { Provider, observer } from 'mobx-react'
 
-import { ThemeProvider } from './themes'
+import { ThemeProvider } from './utils'
 import Navigator from './components/Navigation'
 import RootStore from './stores'
 

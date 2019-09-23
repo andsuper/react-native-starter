@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { View } from 'react-native'
 
-import { ThemeContext } from '../../themes'
+import { ThemeContext } from '../../utils'
 import ThemedText from '../ThemedText'
 import styles from './ListItem.styles'
 
