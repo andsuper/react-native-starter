@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "run:ios": "react-native run-ios",
-    "run:android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "pod:install": "cd ios && pod install",
     "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'"
+    "format": "prettier --write 'src/**/*'"
   },
   "dependencies": {
     "mobx": "^5.13.0",
@@ -40,15 +39,11 @@
     "metro-react-native-babel-preset": "^0.56.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "16.9.0",
-    "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-react": "^4.1.0",
     "typescript": "^3.6.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && npm run lint"
+      "pre-commit": "npm run format"
     }
   },
   "jest": {

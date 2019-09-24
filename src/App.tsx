@@ -3,7 +3,7 @@ import { ActivityIndicator, StatusBar, View } from 'react-native'
 import { Provider, observer } from 'mobx-react'
 
 import { ThemeProvider } from './utils'
-import Navigator from './components/Navigation'
+import AppNavigation from './navigation'
 import RootStore from './stores'
 
 const store = new RootStore()
@@ -21,7 +21,7 @@ const App = () => {
             <ActivityIndicator animating={isHydrating} />
           </View>
         ) : (
-          <Navigator />
+          <AppNavigation />
         )}
       </ThemeProvider>
     </Provider>

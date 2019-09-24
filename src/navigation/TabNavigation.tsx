@@ -2,10 +2,10 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Feather'
 import { createBottomTabNavigator, NavigationContainer } from 'react-navigation'
 
-import i18n from '../../i18n'
-import ThemedTabBar from '../ThemedTabBar'
-import HomeScreen from '../../screens/Home'
-import SettingsScreen from '../../screens/Settings'
+import i18n from '../i18n'
+import ThemedTabBar from '../components/ThemedTabBar'
+import HomeScreen from '../screens/Home'
+import SettingsScreen from '../screens/Settings'
 
 const Navigation: NavigationContainer = createBottomTabNavigator(
   {
